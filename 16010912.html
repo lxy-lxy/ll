@@ -1,19 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-    <div class="div">
-    	<ul>
-    		<li>1</li>
-    		<li></li>
-    		<li></li>
-    		<li></li>
-    	</ul>
-    </div>
-    <div class="nav"></div>
-    <div class="footer"></div>
-     <div class="footer"></div>
-    </body>
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<style>	
+		body{
+			width: 100%;
+			height: 1000px;
+		}
+		div{
+			width: 200px;	
+			height: 200px;	
+			border: 1px solid #000;
+			float: left;
+			text-align: center;
+			line-height: 200px;
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body contextmenu="body">
+<menu id="body" type="context">
+	<menuitem label="粉红" onclick="bodybs('pink')"></menuitem>
+	<menuitem label="黄色" onclick="bodybs('yellow')"></menuitem>
+	<menuitem label="紫色" onclick="bodybs('purple')"></menuitem>
+</menu>
+	<div contextmenu="div1caidan">1</div>
+	<menu id="div1caidan" type="context">
+		<menuitem label="红色"></menuitem>	
+		<menuitem label="绿色"></menuitem>
+		<menuitem label="蓝色"></menuitem>
+	</menu>
+	<div contextmenu="div2caidan">2</div>
+	<menu id="div2caidan" type="context">
+		<menuitem label="红色" icon="icon1.jpg"></menuitem>
+		<menuitem label="绿色" icon="icon2.jpg"></menuitem>
+		<menuitem label="蓝色" icon="icon3.jpg"></menuitem>
+	</menu>
+	<div contextmenu="div3caidan">3</div>
+	<menu id="div3caidan" type="context">
+	<menu label="变色" icon="icon1.jpg">
+		<menuitem label="红色" icon="icon1.jpg"></menuitem>
+		<menuitem label="绿色" icon="icon2.jpg"></menuitem>
+		<menuitem label="蓝色" icon="icon3.jpg"></menuitem>
+		</menu>
+	</menu>
+	<div id="div4" contextmenu="div4caidan">4</div>
+	<menu id="div4caidan" type="context">
+		<menu label="变色" icon="icno1.jpg">
+			<menuitem label="红色" icon="icon1.jpg" onclick="bianse('red')"></menuitem>
+			<menuitem label="绿色" icon="icon2.jpg" onclick="bianse('green')"></menuitem>
+			<menuitem label="蓝色" icon="icon3.jpg" onclick="bianse('blue')"></menuitem>
+			<menuitem label="默认" icon="icon4.png" onclick="bianse('white')"></menuitem>
+		</menu>
+	</menu>
+	<div id="div5" contextmenu="div5caidan">5</div>
+	<menu id="div5caidan" type="context">
+		<menu label="变色" icon="icno1.jpg">
+			<menuitem label="红色加宽100" icon="icon1.jpg" onclick="change('red','300px','200px')"></menuitem>
+			<menuitem label="蓝色加高100" icon="icon2.jpg" onclick="change('blue','200px','300px')"></menuitem>
+			<menuitem label="绿色缩小50" icon="icon3.jpg" onclick="change('green','150px','150px')"></menuitem>
+			<menuitem label="默认" icon="icon4.jpg" onclick="change('white','200px','200px')"></menuitem>
+		</menu>
+	</menu>
+	<script>
+	function bianse(x){
+		document.getElementById("div4").style.backgroundColor=x;
+	}
+	function bodybs(y){
+		document.body.style.backgroundColor=y;
+	}
+	function change(mycolor,mywidth,myheight){
+		document.getElementById("div5").style.cssText="background-color:"+mycolor+";width:"+mywidth+";height:"+myheight+";"
+	}
+	</script>
+</body>
 </html>
