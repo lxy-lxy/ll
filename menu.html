@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title> 
+	<style>
+	div{
+		width: 200px;
+		height: 200px;
+		border:1px solid black;
+		float: left;
+		margin: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div id="div1" contextmenu="menu1">1</div>
+	<menu id="menu1" type="context">
+	<menu label="背景颜色">
+		<menuitem onclick="bs('red')">红色</menuitem>
+		<menuitem onclick="bs('blue')">蓝色</menuitem>
+		<menuitem onclick="bs('green')">绿色</menuitem>
+		<menuitem onclick="bs('white')">默认</menuitem>
+	</menu>
+	<menu label="背景图片">
+		<menuitem onclick="tu('May1.jpg')">图片1</menuitem>
+		<menuitem onclick="tu('May2.jpg')">图片2</menuitem>
+		<menuitem onclick="tu('May3.jpg')">图片3</menuitem>
+		<!-- <menuitem onclick="tu(' ')">无图片</menuitem> -->
+		</menu>
+	</menu>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<script>
+		function bs(x){
+			document.getElementById("div1").style.background="url('')";
+			document.getElementById("div1").style.backgroundColor=x;
+		}
+		function tu(y){
+			document.getElementById("div1").style.background="url("+y+")";
+		}
+	</script>
+</body>
+</html>
